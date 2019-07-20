@@ -1,0 +1,89 @@
+/* Stylesheet for my portfolio page. 
+
+Some usefull notes to myself:
+
+margin: Is typically the whitespace between elements. The margin is NOT "clickable" and is not supposed to be colorized.
+
+padding: Extends the width-height of elements. The padding is "clickable". if background-color is set to an element the padding will also
+be colorized, but not the margin.
+
+In css Grid there is a new and flexible unit: fr  fractional unit.
+
+1 fractional unit is the total width-or-height divided by the number of columns-or-rows.
+
+so if we have 3 columns and all are set to 1fr it means they will all be the same size.
+if we have 3 columns all set to 0.2fr this means that our grid is forced to get smaller, but our grid area is still the same size
+if we have 3 columns all set to 3fr, it will never exceed viewport width or max-width attribute if set.  
+
+In grid items are added automaitaclly in new row if needed.
+*/
+
+body {
+    text-align: center;
+}
+
+p {
+
+    /*margin-left: 40%; */
+    /*margin-right: 40%; */
+    
+}
+
+#MyGrid {
+    /*set the display to grid to indicate that everyting thats is a child of element-id="MyGrid" is part of the grid */
+    display: grid;
+
+    /*Defines how many columns we should have and also the widht of each column. 
+    Can also use an repeat function: repeat(3, 1fr); (this is equal to doing 1fr 1fr 1fr) 
+    
+    2 importan keywords for responsive desgin: auto-fit and auto-fill. these will dynamically determine the amount
+    of rows depending on viewport width. Most useful in combination with minmax() where min value is hardcoded and max value
+    is 1 fraction.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    /* Specifies amount and size in fractions of rows, this is more if you have a set amount of 
+    grid items you know the grid should be. Using grid-euto-rows is more dynamic for defining every new row
+    that is created, and you dont neccesarely know how big the grid will be. */
+    /*grid-template-rows: 1fr 3fr 1fr 1fr; */
+
+    /* On default: lets say there is a text that takes up more space than the grid item allows,
+    then what will happen is that grid will resize all grid items in that row to the size of the text! But
+    if we want the grid items never to change size we can use grid-auto-rows to set a height and then it will never
+    change height of the items in that row. However then the end of the text will either dissapear beneath other elements
+    or it will overflow out of the grid item. 
+    
+    minmax(): Is very usefull in grids. It means: If there is no content in the row dictating the height, then have
+    the row at 200 pixels, if there is content in there that takes it over 200px in height, then use that height for the row.
+    */
+    grid-auto-rows: 200px;/* minmax(200px, auto); */
+
+    /*Defines the gap between each column */
+    grid-column-gap: 80px;
+    grid-row-gap: 80px;
+
+    /*max-width says here that the width of the page should always be 80% of the viewport width
+    edit: Maybe better to say it should have a max-width of 960 pixels*/
+    max-width: 960px;
+    
+    /* margin: auto is used for centering blocks(Elements).
+    The value of said property is adjusted automatically according to the content or the context of the element.*/
+    margin-right: auto; 
+    margin-left: auto; 
+    
+}
+
+/* #MyGrid div   means apply this to all children of the element with id "MyGrid" that are of the type div */
+#MyGrid div {
+
+    background-color: tomato;
+    /*padding: 30px; */ 
+}
+
+/* Means the same as above plus what after ":". nth-child(even) means take every child that has index of even number and apply
+this style to that. This useful for visualizing the grid. For hose elements for which it applies the rules here will
+overrid the rules in "#MyGrid div". F. ex: it will take on a blue background color but not a tomato color */
+#MyGrid div:nth-child(even) {
+
+    background-color: blue;
+}
