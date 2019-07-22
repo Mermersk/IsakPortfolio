@@ -20,14 +20,49 @@ In grid items are added automaitaclly in new row if needed.
 
 body {
     text-align: center;
+    font-family: Courier Bold, Courier;
 }
 
-p {
+nav {
 
-    /*margin-left: 40%; */
-    /*margin-right: 40%; */
+    margin-top: 8vh;
     
 }
+
+#Navigation a {
+    /* a is by default anf inline lement change it to inlineblock so I can apply space between when viewport is more narrow */
+    display: inline-block;
+    font-size: 1.5em;
+    color: black;
+    text-decoration: none;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
+    
+    margin-bottom: 1em;
+    
+    clip-path: circle(55% at 50% 50%);
+    -webkit-clip-path: circle(55% at 50% 50%);
+
+    /*padding-bottom: 1vh; */
+    border-bottom: double;
+    border-bottom-color: orangered;
+    border-bottom-width: 5px; 
+    
+}
+
+/*
+nav a:active {
+
+    background-color: rgba(68, 55, 187, 0.781);
+}
+*/
+h1 {
+
+    margin-top: 12vh;
+}
+
 
 #MyGrid {
     /*set the display to grid to indicate that everyting thats is a child of element-id="MyGrid" is part of the grid */
@@ -40,7 +75,7 @@ p {
     of rows depending on viewport width. Most useful in combination with minmax() where min value is hardcoded and max value
     is 1 fraction.
     */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 2fr repeat(6, 1fr) 1.75fr;
 
     /* Specifies amount and size in fractions of rows, this is more if you have a set amount of 
     grid items you know the grid should be. Using grid-euto-rows is more dynamic for defining every new row
@@ -56,11 +91,11 @@ p {
     minmax(): Is very usefull in grids. It means: If there is no content in the row dictating the height, then have
     the row at 200 pixels, if there is content in there that takes it over 200px in height, then use that height for the row.
     */
-    grid-auto-rows: 200px;/* minmax(200px, auto); */
+    grid-template-rows: repeat(2, minmax(250px, auto)); /*grid-auto-rows: 200px;*/  /* minmax(200px, auto); */
 
     /*Defines the gap between each column */
-    grid-column-gap: 80px;
-    grid-row-gap: 80px;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
 
     /*max-width says here that the width of the page should always be 80% of the viewport width
     edit: Maybe better to say it should have a max-width of 960 pixels*/
@@ -69,14 +104,15 @@ p {
     /* margin: auto is used for centering blocks(Elements).
     The value of said property is adjusted automatically according to the content or the context of the element.*/
     margin-right: auto; 
-    margin-left: auto; 
+    margin-left: auto;
+    margin-top: 5vh; 
     
 }
 
 /* #MyGrid div   means apply this to all children of the element with id "MyGrid" that are of the type div */
 #MyGrid div {
 
-    background-color: tomato;
+    /*background-color: tomato; */
     /*padding: 30px; */ 
 }
 
@@ -85,5 +121,54 @@ this style to that. This useful for visualizing the grid. For hose elements for 
 overrid the rules in "#MyGrid div". F. ex: it will take on a blue background color but not a tomato color */
 #MyGrid div:nth-child(even) {
 
-    background-color: blue;
+    /*background-color: blue; */
+}
+/* Choosing div with id = "mainText" */
+#mainText {
+    /* Telling that this div element designated space should start at column 4 and end at column 7. */
+    /*grid-column-start: 4;
+    grid-column-end: 7; */
+    /*This grid-columns is a shorthand way of doing excatly the same as here above: namely grid-column-start and grid-column-end */
+    grid-column: 4 / 9;
+}
+
+#pic1 {
+
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+}
+
+#pic2 {
+
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+}
+
+#pic3 {
+
+    grid-column: 4 / 8;
+    grid-row: 2 / 3;
+    
+}
+
+#links {
+
+    grid-column: 7 / 9;    
+}
+
+img {
+    /* putting al image tags to fill out in widht as much as possible in their designated grid area.
+    As far as I can see putting only one axis to 100% and other to auto(or both auto) will respect the aspect ratio
+    */
+    width: 100%;
+    height: auto;
+}
+
+video {
+    /* putting al image tags to fill out in widht as much as possible in their designated grid area.
+    As far as I can see putting only one axis to 100% and other to auto(or both auto) will respect the aspect ratio
+    */
+    width: 100%;
+    height: auto;
 }
