@@ -172,3 +172,25 @@ video {
     width: 100%;
     height: auto;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+p {
+    /*opacity: 0; */
+    /*transition: opacity 2s; */
+    animation: fadeIn;
+    animation-duration: 2s;
+    /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
+    the to(or 100%) value and not go back to its original value. */
+    animation-fill-mode: forwards;
+    
+    
+}
+
