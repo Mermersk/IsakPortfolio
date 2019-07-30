@@ -19,7 +19,6 @@ class Project {
     constructor(name) {
         //Name will act as our ID
         this.name = name;
-
         
     }
     /**
@@ -54,13 +53,43 @@ class Project {
     static getParentDiv(parent) {
         return document.getElementById(parent);
     }
+
+    /**
+     * Setters and getters have special syntax here, this one specifies a set function.
+     * @description Text should be simply a string or string literal to put into an <p> element.
+     * @param String
+     */
     
-    //Setters and getters have special syntax here, this one specifies a set function.
     set insertMainText(text) {
-        /*Text should be simply a string or string literal to put into an <p> element */
         this.text = text;
     }
 
+
+    /**
+     * @description Text should be simply a string that is the URL(local or not) to the pic/video/shader.
+     * @param String
+     */
+    set insertPic1(text) {
+        this.pic1URL = text;
+    }
+
+    /**
+     * @description Text should be simply a string that is the URL(local or not) to the pic/video/shader.
+     * @param String
+     */
+    set insertPic2(text) {
+        this.pic2URL = text;
+    }
+
+    /**
+     * @description Text should be simply a string that is the URL(local or not) to the pic/video/shader.
+     * @param String
+     */
+    set insertPic3(text) {
+        this.pic3URL = text;
+    }
+
+    
     /**
      * @description Creates the element for our MainText, inserts content into it and
      * defines/finds the parent element to our MainText element. Since all parents are divs
@@ -72,6 +101,34 @@ class Project {
         this.mainTextElement.innerText = this.text;
         this.divMainText = Project.getParentDiv("mainText");
     }
+
+    /**
+     * @description Text should be simply a string that is the URL(local or not) to the pic/video/shader.
+     * This function creates the element, inserts the content and sets a variable pointing to its parent.
+     * @param String - what type of content is this(What element to create)? Allowed: img, video, canvas 
+     */
+    createPic1Element(type) {
+
+    }
+
+    /**
+     * @description Text should be simply a string that is the URL(local or not) to the pic/video/shader.
+     * This function creates the element, inserts the content and sets a variable pointing to its parent.
+     * @param String - what type of content is this(What element to create)? Allowed: img, video, canvas 
+     */
+    createPic2Element(type) {
+
+    }
+
+    /**
+     * @description Text should be simply a string that is the URL(local or not) to the pic/video/shader.
+     * This function creates the element, inserts the content and sets a variable pointing to its parent.
+     * @param String - what type of content is this(What element to create)? Allowed: img, video, canvas 
+     */
+    createPic3Element(type) {
+
+    }
+
 
     /**
      * @description Appends(inserts) all elements to their parents in the html document.
