@@ -39,7 +39,11 @@ class Project {
                 return document.createElement("img");
 
             case "video":
-                return document.createElement("video");
+                let vv = document.createElement("video");
+                vv.autoplay = true;
+                vv.loop = true;
+                vv.muted = true;
+                return vv;
 
             case "canvas":
                 return document.createElement("canvas");
@@ -108,6 +112,9 @@ class Project {
      * @param String - what type of content is this(What element to create)? Allowed: img, video, canvas 
      */
     createPic1Element(type) {
+        this.pic1Element = Project.createElement(type);
+        this.pic1Element.src = this.pic1URL;
+        this.divPic1 = Project.getParentDiv("pic1");
 
     }
 
@@ -117,7 +124,9 @@ class Project {
      * @param String - what type of content is this(What element to create)? Allowed: img, video, canvas 
      */
     createPic2Element(type) {
-
+        this.pic2Element = Project.createElement(type);
+        this.pic2Element.src = this.pic2URL;
+        this.divPic2 = Project.getParentDiv("pic2");
     }
 
     /**
@@ -126,7 +135,9 @@ class Project {
      * @param String - what type of content is this(What element to create)? Allowed: img, video, canvas 
      */
     createPic3Element(type) {
-
+        this.pic3Element = Project.createElement(type);
+        this.pic3Element.src = this.pic3URL;
+        this.divPic3 = Project.getParentDiv("pic3");
     }
 
 
@@ -137,6 +148,19 @@ class Project {
     appendAllElements() {
 
         this.divMainText.appendChild(this.mainTextElement);
+
+        this.divPic1.appendChild(this.pic1Element);
+        this.divPic2.appendChild(this.pic2Element);
+        this.divPic3.appendChild(this.pic3Element);
+    }
+
+    removeAllElements() {
+        this.divMainText.removeChild(this.mainTextElement);
+
+        this.divPic1.removeChild(this.pic1Element);
+        this.divPic2.removeChild(this.pic2Element);
+        this.divPic3.removeChild(this.pic3Element);
+
     }
 
     fadeInAllElements() {
@@ -151,9 +175,9 @@ class Project {
 
 }
 
-let ss = new Project("Duckentry");
+//let ss = new Project("Duckentry");
 //This is how we call the set function. It might seem like we ar just accesing a field/variable but we are actually calling an function
-ss.insertMainText = "Hello I came from an class!";
-ss.createMaintextElement();
-ss.appendAllElements();
+//ss.insertMainText = "Hello I came from an class!";
+//ss.createMaintextElement();
+//ss.appendAllElements();
 //ss.fadeInAllElements();
