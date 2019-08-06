@@ -29,7 +29,7 @@ function setBackgroundColor() {
 }
 
 function newPage() {
-    //Event.target will return the lement that was clicked
+    //Event.target will return the element that was clicked
     let clickedProject = event.target;
 
     console.log(clickedProject.textContent);
@@ -52,6 +52,7 @@ let projects = {
 
     [navigationItems[0].textContent]: {
         Text: "This is the text for duckentry",
+        picElementType: ["video", "img", "img"],
         pic1Resource: "https://zippy.gfycat.com/UntimelyCooperativeArcticfox.webm",
         pic2Resource: "https://lh3.googleusercontent.com/acny40JIQw4szD4QZQXscCURdD17ykaDGDWnaSlpWjEI6YjPwGUbpJ7gKoNp55Q5cOI=w720-h310-rw",
         pic3Resource: "https://lh3.googleusercontent.com/4840UYRFBObn5Bhmx7ZB1fV6MBHnWWPwKqoPVWnrPKess4X73I9WkbujpOTc3oDX=w720-h310-rw"
@@ -59,30 +60,41 @@ let projects = {
     },
     [navigationItems[1].textContent]: {
         Text: "This is the text for Shaders!",
-        pic1Resource: "",
-        pic2Resource: "",
-        pic3Resource: ""
+        picElementType: ["img", "img", "img"],
+        pic1Resource: "Media/circleShader.png",
+        pic2Resource: "Media/sineShader.png",
+        pic3Resource: "Media/HSBShader.png"
 
     },
     [navigationItems[2].textContent]: {
         Text: "This is the text for NoiseGen!",
+        picElementType: ["img", "img", "img"],
+        pic1Resource: "Media/NoiseGen-purple.png",
+        pic2Resource: "Media/NoiseGen-green.png",
+        pic3Resource: "Media/NoiseGen-blue.png"
+
+    },
+    [navigationItems[3].textContent]: {
+        Text: "This is the text for about!",
+        picElementType: ["video", "img", "img"],
         pic1Resource: "",
         pic2Resource: "",
         pic3Resource: ""
 
     },
-    [navigationItems[3].textContent]: {
-        Text: "This is the text for about!",
-        pic1Resource: "",
-        pic2Resource: "",
-        pic3Resource: ""
+
+    "linksResource": {
+
+        github: "Media/GithubLogo.png",
+        playStore: "Media/google-play-badge.png",
+        love2dForum: "Media/love-app-icon.png"
 
     }
 
 };
 
 function changePage(newPageName) {
-
+    //Getting info for new page and asinging it to newPage.
     let newPage = projects[newPageName];
 
     visiblePage.insertMainText = newPage.Text;
@@ -91,9 +103,9 @@ function changePage(newPageName) {
     visiblePage.insertPic3 = newPage.pic3Resource;
 
     visiblePage.createMaintextElement();
-    visiblePage.createPic1Element("video");
-    visiblePage.createPic2Element("img");
-    visiblePage.createPic3Element("img");
+    visiblePage.createPic1Element(newPage.picElementType[0]);
+    visiblePage.createPic2Element(newPage.picElementType[1]);
+    visiblePage.createPic3Element(newPage.picElementType[2]);
 
     visiblePage.appendAllElements();
 

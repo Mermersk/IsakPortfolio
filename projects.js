@@ -48,6 +48,9 @@ class Project {
             case "canvas":
                 return document.createElement("canvas");
 
+            case "a":
+                return document.createElement("a");
+
             default:
                 //Throwing an user defined error. I want the script to stop if there is an typo.
                 throw "You have entered an invalid element type!";
@@ -93,6 +96,14 @@ class Project {
         this.pic3URL = text;
     }
 
+    /**
+     * @description Links should be the urls to different websites.
+     * 
+     */
+    set insertLinks(link) {
+        this.linkURL = link;
+    }
+
     
     /**
      * @description Creates the element for our MainText, inserts content into it and
@@ -114,6 +125,8 @@ class Project {
     createPic1Element(type) {
         this.pic1Element = Project.createElement(type);
         this.pic1Element.src = this.pic1URL;
+        //Making an ID for the element so that it gets animated everytime when it is recreated. Before the animation(in CSS) was targeting the parent div.
+        this.pic1Element.id = "pic1Anim";
         this.divPic1 = Project.getParentDiv("pic1");
 
     }
@@ -125,6 +138,7 @@ class Project {
      */
     createPic2Element(type) {
         this.pic2Element = Project.createElement(type);
+        this.pic2Element.id = "pic2Anim";
         this.pic2Element.src = this.pic2URL;
         this.divPic2 = Project.getParentDiv("pic2");
     }
@@ -137,9 +151,16 @@ class Project {
     createPic3Element(type) {
         this.pic3Element = Project.createElement(type);
         this.pic3Element.src = this.pic3URL;
+        this.pic3Element.id = "pic3Anim";
         this.divPic3 = Project.getParentDiv("pic3");
     }
 
+    createLinkElement() {
+        this.linkElement = Project.createElement("a");
+        this.linkElement.href = this.linkURL;
+        this.linkElement.target = "_blank";
+        this.linkImageElement = Project.createElement("img");
+    }
 
     /**
      * @description Appends(inserts) all elements to their parents in the html document.
@@ -153,6 +174,10 @@ class Project {
         this.divPic2.appendChild(this.pic2Element);
         this.divPic3.appendChild(this.pic3Element);
     }
+
+    /**
+     * @description Removes all elements from their parents in the html document.
+     */
 
     removeAllElements() {
         this.divMainText.removeChild(this.mainTextElement);

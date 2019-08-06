@@ -132,6 +132,7 @@ overrid the rules in "#MyGrid div". F. ex: it will take on a blue background col
     grid-column: 4 / 9;
 }
 
+
 #pic1 {
 
     grid-column: 1 / 4;
@@ -139,16 +140,55 @@ overrid the rules in "#MyGrid div". F. ex: it will take on a blue background col
 
 }
 
+
 #pic2 {
 
     grid-column: 1 / 4;
     grid-row: 2 / 3;
+
 }
 
 #pic3 {
 
     grid-column: 4 / 8;
     grid-row: 2 / 3;
+    
+}
+
+
+#pic1Anim {
+
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
+    the to(or 100%) value and not go back to its original value. */
+    animation-fill-mode: forwards;
+
+}
+
+#pic2Anim {
+    
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 1.5s;
+    /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
+    the to(or 100%) value and not go back to its original value. */
+    animation-fill-mode: forwards;
+
+}
+
+#pic3Anim {
+
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 2.5s;
+    /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
+    the to(or 100%) value and not go back to its original value. */
+    animation-fill-mode: forwards;
     
 }
 
@@ -163,14 +203,10 @@ img {
     */
     width: 100%;
     height: auto;
-    opacity: 0;
 
     animation: fadeIn;
-    animation-duration: 3s;
-    animation-delay: 0.5s;
-    /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
-    the to(or 100%) value and not go back to its original value. */
-    animation-fill-mode: forwards;
+    animation-play-state: running;
+    
 }
 
 video {
@@ -179,14 +215,7 @@ video {
     */
     width: 100%;
     height: auto;
-    opacity: 0;
-
-    animation: fadeIn;
-    animation-duration: 3s;
-    animation-delay: 0.5s;
-    /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
-    the to(or 100%) value and not go back to its original value. */
-    animation-fill-mode: forwards;
+  
 }
 
 @keyframes fadeIn {
@@ -202,11 +231,12 @@ p {
     /*opacity: 0; */
     /*transition: opacity 2s; */
     animation: fadeIn;
-    animation-duration: 3s;
+    animation-duration: 2s;
     /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
     the to(or 100%) value and not go back to its original value. */
     animation-fill-mode: forwards;
     
     
 }
+
 
