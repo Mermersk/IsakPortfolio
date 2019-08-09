@@ -30,7 +30,7 @@ nav {
 }
 
 #Navigation a {
-    /* a is by default anf inline lement change it to inlineblock so I can apply space between when viewport is more narrow */
+    /* a is by default an inline element change it to inlineblock so I can apply space between when viewport is more narrow */
     display: inline-block;
     font-size: 1.5em;
     color: black;
@@ -78,7 +78,7 @@ h1 {
     grid-template-columns: 2fr repeat(6, 1fr) 1.75fr;
 
     /* Specifies amount and size in fractions of rows, this is more if you have a set amount of 
-    grid items you know the grid should be. Using grid-euto-rows is more dynamic for defining every new row
+    grid items you know the grid should be. Using ghrid-euto-rows is more dynamic for defining every new row
     that is created, and you dont neccesarely know how big the grid will be. */
     /*grid-template-rows: 1fr 3fr 1fr 1fr; */
 
@@ -92,7 +92,7 @@ h1 {
     the row at 200 pixels, if there is content in there that takes it over 200px in height, then use that height for the row.
     */
     grid-template-rows: repeat(2, minmax(250px, auto)); /*grid-auto-rows: 200px;*/  /* minmax(200px, auto); */
-
+    /*grid-auto-rows: minmax(250px, auto);*/
     /*Defines the gap between each column */
     grid-column-gap: 1em;
     grid-row-gap: 1em;
@@ -130,6 +130,7 @@ overrid the rules in "#MyGrid div". F. ex: it will take on a blue background col
     grid-column-end: 7; */
     /*This grid-columns is a shorthand way of doing excatly the same as here above: namely grid-column-start and grid-column-end */
     grid-column: 4 / 9;
+    grid-row: 1 / 2;
 }
 
 
@@ -192,20 +193,30 @@ overrid the rules in "#MyGrid div". F. ex: it will take on a blue background col
     
 }
 
+.linkAnim {
+
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
+    the to(or 100%) value and not go back to its original value. */
+    animation-fill-mode: forwards;
+    
+}
+
 #links {
 
-    grid-column: 7 / 9;    
+    grid-column: 8 / 9; 
+    grid-row: 2 / 3;   
 }
 
 img {
-    /* putting al image tags to fill out in widht as much as possible in their designated grid area.
+    /* putting all image tags to fill out in width as much as possible in their designated grid area.
     As far as I can see putting only one axis to 100% and other to auto(or both auto) will respect the aspect ratio
     */
     width: 100%;
     height: auto;
-
-    animation: fadeIn;
-    animation-play-state: running;
     
 }
 
@@ -228,15 +239,22 @@ video {
 }
 
 p {
-    /*opacity: 0; */
-    /*transition: opacity 2s; */
+    /* There is no animation delay here since it is teh first thing to appear. 
+    Also there is no ID on this sinxe there is only 1 p elemnt on my portfolio site. */
     animation: fadeIn;
     animation-duration: 2s;
     /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
     the to(or 100%) value and not go back to its original value. */
     animation-fill-mode: forwards;
-    
-    
+       
+}
+
+@media screen and (max-width: 1000px) {
+
+    body {
+        background-color: blueviolet;
+    }
+
 }
 
 

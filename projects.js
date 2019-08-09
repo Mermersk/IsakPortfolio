@@ -98,10 +98,18 @@ class Project {
 
     /**
      * @description Links should be the urls to different websites.
-     * 
+     * @param link: The URL to the website/resource
+     * EDIT: Pass in a list here
      */
-    set insertLinks(link) {
-        this.linkURL = link;
+    set insertLinks(links) {
+        this.linksURL = links;
+    }
+    /**
+     * @param imageType: The URL to the image to be clicked on. Is usually local eg: Media/GithubLogo.png
+     * EDIT: Pass in alist here
+     */
+    set insertImagesForLinks(imageTypes) {
+        this.linkImagesURL = imageTypes;
     }
 
     
@@ -113,7 +121,8 @@ class Project {
 
     createMaintextElement() {
         this.mainTextElement = Project.createElement("p");
-        this.mainTextElement.innerText = this.text;
+        //By changing from innerText to innerHTML I can include other html tags inside the text string.(see projects object-data structure)
+        this.mainTextElement.innerHTML = this.text;
         this.divMainText = Project.getParentDiv("mainText");
     }
 
@@ -156,10 +165,32 @@ class Project {
     }
 
     createLinkElement() {
+        /*
         this.linkElement = Project.createElement("a");
         this.linkElement.href = this.linkURL;
         this.linkElement.target = "_blank";
         this.linkImageElement = Project.createElement("img");
+        this.linkImageElement.src = this.linkImageURL;
+        //a working image link is: <a><img></img></a>. Therefore i am appending the image as child of the <a> element
+        this.linkElement.appendChild(this.linkImageElement);
+        this.divLinks = Project.getParentDiv("links");
+        */
+        this.linkElements = [];
+        this.linksURL.forEach((element, i) => {
+            let el = Project.createElement("a");
+            el.href = element;
+            el.target = "_blank";
+
+            let elImage = Project.createElement("img");
+            elImage.src = this.linkImagesURL[i];
+            elImage.style.marginTop = "40px";
+            elImage.className = "linkAnim";
+
+            el.appendChild(elImage);
+            this.linkElements.push(el);
+        });
+
+        this.divLinks = Project.getParentDiv("links");
     }
 
     /**
@@ -173,6 +204,10 @@ class Project {
         this.divPic1.appendChild(this.pic1Element);
         this.divPic2.appendChild(this.pic2Element);
         this.divPic3.appendChild(this.pic3Element);
+
+        this.linkElements.forEach(element => {
+            this.divLinks.appendChild(element);
+        });
     }
 
     /**
@@ -185,6 +220,12 @@ class Project {
         this.divPic1.removeChild(this.pic1Element);
         this.divPic2.removeChild(this.pic2Element);
         this.divPic3.removeChild(this.pic3Element);
+
+        //this.linkElement.removeChild(this.linkImageElement);
+        
+        this.linkElements.forEach(element => {
+            this.divLinks.removeChild(element);
+        });
 
     }
 
