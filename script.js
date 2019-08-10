@@ -55,11 +55,11 @@ let projects = {
 
         This magical duck has been given 3 lives but should it loose all three lives before the goal is reached it will have to start at the beginning again. However the duration of the game is short and one should be able to finish it in under 5 minutes if the duck manages a crash-free reentry.
         <br></br>
-        Features:\n
-        • 2 different gameplay-modes, one with gravity and one without it.\n
-        • A start and a ending cinematic.\n
-        • Procedural and hand-drawn art. \n
-        • No ads or in-app purchases.\n
+        Features:
+        • 2 different gameplay-modes, one with gravity and one without it.
+        • A start and a ending cinematic.
+        • Procedural and hand-drawn art. 
+        • No ads or in-app purchases.
         
         `,
         picElementType: ["video", "img", "img"],

@@ -93,6 +93,11 @@ h1 {
     */
     grid-template-rows: repeat(2, minmax(250px, auto)); /*grid-auto-rows: 200px;*/  /* minmax(200px, auto); */
     /*grid-auto-rows: minmax(250px, auto);*/
+
+    /*Defauly layout for "destop" site */
+    grid-template-areas: "pic1 pic1 pic1 mainText mainText mainText mainText mainText"
+                         "pic2 pic2 pic2 pic3     pic3     pic3     pic3    links";
+
     /*Defines the gap between each column */
     grid-column-gap: 1em;
     grid-row-gap: 1em;
@@ -129,33 +134,50 @@ overrid the rules in "#MyGrid div". F. ex: it will take on a blue background col
     /*grid-column-start: 4;
     grid-column-end: 7; */
     /*This grid-columns is a shorthand way of doing excatly the same as here above: namely grid-column-start and grid-column-end */
+    /*
     grid-column: 4 / 9;
     grid-row: 1 / 2;
+    */
+    grid-area: mainText;
 }
 
 
 #pic1 {
-
+    /*
     grid-column: 1 / 4;
     grid-row: 1 / 2;
+    */
+    grid-area: pic1;
 
 }
 
 
 #pic2 {
-
+    /*
     grid-column: 1 / 4;
     grid-row: 2 / 3;
+    */
+    grid-area: pic2;
 
 }
 
 #pic3 {
-
+    /*
     grid-column: 4 / 8;
     grid-row: 2 / 3;
+    */
+    grid-area: pic3;
     
 }
 
+
+#links {
+    /*
+    grid-column: 8 / 9; 
+    grid-row: 2 / 3;
+    */
+    grid-area: links;
+}
 
 #pic1Anim {
 
@@ -205,11 +227,6 @@ overrid the rules in "#MyGrid div". F. ex: it will take on a blue background col
     
 }
 
-#links {
-
-    grid-column: 8 / 9; 
-    grid-row: 2 / 3;   
-}
 
 img {
     /* putting all image tags to fill out in width as much as possible in their designated grid area.
@@ -248,11 +265,22 @@ p {
     animation-fill-mode: forwards;
        
 }
+/*
+Responsive design: Using media query too detect when the screen width is under 950px.
+If this is the case I change my layout to the one desrcibed below where each content 
+occupies 1 row since there is less width now. Note: all other attributes inside #MyGrid
+above are still in effect its only grid-template-areas that changes.
+*/
+@media screen and (max-width: 950px) {
 
-@media screen and (max-width: 1000px) {
+    #MyGrid {
 
-    body {
-        background-color: blueviolet;
+        grid-template-areas: ". mainText mainText mainText mainText mainText mainText"
+                             ". pic1     pic1     pic1     pic1     pic1     pic1"
+                             ". pic2     pic2     pic2     pic2     pic2     pic2"
+                             ". pic3     pic3     pic3     pic3     pic3     pic3"
+                             ". links    links    links    links    links    links";
+    
     }
 
 }
