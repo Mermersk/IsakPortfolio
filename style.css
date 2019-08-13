@@ -63,6 +63,13 @@ h1 {
     margin-top: 12vh;
 }
 
+h2 {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: center;
+    
+}
+
 
 #MyGrid {
     /*set the display to grid to indicate that everyting thats is a child of element-id="MyGrid" is part of the grid */
@@ -91,8 +98,8 @@ h1 {
     minmax(): Is very usefull in grids. It means: If there is no content in the row dictating the height, then have
     the row at 200 pixels, if there is content in there that takes it over 200px in height, then use that height for the row.
     */
-    grid-template-rows: repeat(2, minmax(250px, auto)); /*grid-auto-rows: 200px;*/  /* minmax(200px, auto); */
-    /*grid-auto-rows: minmax(250px, auto);*/
+    grid-template-rows: repeat(2, minmax(150px, auto)); /*grid-auto-rows: 200px;*/  /* minmax(200px, auto); */
+    /*grid-auto-rows: minmax(150px, auto);*/
 
     /*Defauly layout for "destop" site */
     grid-template-areas: "pic1 pic1 pic1 mainText mainText mainText mainText mainText"
@@ -263,6 +270,9 @@ p {
     /* animation-fill-mode: forwards: makes it so that when the animation is finished it will stay at
     the to(or 100%) value and not go back to its original value. */
     animation-fill-mode: forwards;
+    text-align: justify;
+    margin: 0px; 
+    
        
 }
 /*

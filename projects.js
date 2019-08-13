@@ -216,7 +216,7 @@ class Project {
 
     removeAllElements() {
         this.divMainText.removeChild(this.mainTextElement);
-
+        
         this.divPic1.removeChild(this.pic1Element);
         this.divPic2.removeChild(this.pic2Element);
         this.divPic3.removeChild(this.pic3Element);

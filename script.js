@@ -51,16 +51,15 @@ let visiblePage = new Project("");
 let projects = {
 
     [navigationItems[0].textContent]: {
-        Text: `Duckentry is a short surreal adventure about a duck lost in space. Your mission is to guide the duck to a successful reentry to the planet earth. However there will be obstacles on the way and only an exceptional duck-astronaut can make the duck-entry successful.
-
-        This magical duck has been given 3 lives but should it loose all three lives before the goal is reached it will have to start at the beginning again. However the duration of the game is short and one should be able to finish it in under 5 minutes if the duck manages a crash-free reentry.
-        <br></br>
-        Features:
-        • 2 different gameplay-modes, one with gravity and one without it.
-        • A start and a ending cinematic.
-        • Procedural and hand-drawn art. 
-        • No ads or in-app purchases.
+        Text: `<h2>Duckentry</h2>
         
+        Duckentry is a short surreal adventure about a duck lost in space.
+        Your mission is to guide the duck to a successful reentry to the planet earth.
+        However there will be obstacles on the way and only an exceptional duck-astronaut can make the duck-entry successful.
+        <br></br>
+        This game was programmed in Lua with the help of the Love2d framework. It started as an Flappy Bird clone but soon became
+        something bigger. I wrote it first with no clear structure/design and it became an spaghetti-code mess. 
+        So I started from scratch again and rewrote the game following OOP principles and managed to finish it in the end. Play store and github links are below!
         `,
         picElementType: ["video", "img", "img"],
         pic1Resource: "https://zippy.gfycat.com/UntimelyCooperativeArcticfox.webm",
@@ -71,7 +70,16 @@ let projects = {
 
     },
     [navigationItems[1].textContent]: {
-        Text: "This is the text for Shaders!",
+        Text: `<h2>Shaders</h2>
+        In spring/summer of 2019 I decided to learn how to create shaders. I was fascinated by effects one can see in video games and websites that utilize WebGL. 
+        I used an fantastic resource called <a href = "https://thebookofshaders.com/">The Book of Shaders</a>. These are programmed in the shading language GLSL(WebGL). 
+        <br></br>
+        After having completed some shaders I wanted to showcase them somehow. This entailed starting the other thing I wanted to learn this summer, namely web-development.
+        So I started to learn HTML5, CSS3 and ES6 Javascript. The shader site started out as just a static site. However this became a problem when I wnated to put more shaders
+        on it, performance started to tank. So I redesigned it be dynamic where only 1 shader is shown at once and the user can switch between. It went from being static to being
+        mostly created with Javascript. Link to the site is below!
+        
+        `,
         picElementType: ["img", "img", "img"],
         pic1Resource: "Media/circleShader.png",
         pic2Resource: "Media/sineShader.png",
