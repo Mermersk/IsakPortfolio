@@ -78,7 +78,6 @@ let projects = {
         So I started to learn HTML5, CSS3 and ES6 Javascript. The shader site started out as just a static site. However this became a problem when I wnated to put more shaders
         on it, performance started to tank. So I redesigned it be dynamic where only 1 shader is shown at once and the user can switch between. It went from being static to being
         mostly created with Javascript. Link to the site is below!
-        
         `,
         picElementType: ["img", "img", "img"],
         pic1Resource: "Media/circleShader.png",
