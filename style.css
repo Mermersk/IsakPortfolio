@@ -52,12 +52,6 @@ nav {
     
 }
 
-/*
-nav a:active {
-
-    background-color: rgba(68, 55, 187, 0.781);
-}
-*/
 h1 {
 
     margin-top: 12vh;
@@ -121,20 +115,25 @@ h2 {
     
 }
 
-/* #MyGrid div   means apply this to all children of the element with id "MyGrid" that are of the type div */
+
+/* OBS: this 2 CSS selectors is for visualizing the grid, useful when starting to develop the grid.
+
+#MyGrid div   means apply this to all children of the element with id "MyGrid" that are of the type div 
+
 #MyGrid div {
 
-    /*background-color: tomato; */
-    /*padding: 30px; */ 
+    background-color: tomato;
 }
 
 /* Means the same as above plus what after ":". nth-child(even) means take every child that has index of even number and apply
 this style to that. This useful for visualizing the grid. For hose elements for which it applies the rules here will
-overrid the rules in "#MyGrid div". F. ex: it will take on a blue background color but not a tomato color */
+overrid the rules in "#MyGrid div". F. ex: it will take on a blue background color but not a tomato color 
 #MyGrid div:nth-child(even) {
 
-    /*background-color: blue; */
+    background-color: blue;
 }
+*/
+
 /* Choosing div with id = "mainText" */
 #mainText {
     /* Telling that this div element designated space should start at column 4 and end at column 7. */

@@ -83,12 +83,20 @@ let projects = {
         pic1Resource: "Media/circleShader.png",
         pic2Resource: "Media/sineShader.png",
         pic3Resource: "Media/HSBShader.png",
-        linkURLS: ["http://mermersk.no/", "https://github.com/Mermersk/GLSL"],
+        linkURLS: ["http://mermersk.no/shaders", "https://github.com/Mermersk/GLSL"],
         linkImageURLS: ["Media/shaderSiteLogo.png", "Media/GitHub_Logo.png"]
 
     },
     [navigationItems[2].textContent]: {
-        Text: "This is the text for NoiseGen!",
+        Text: `<h2>NoiseGen</h2>
+        NoiseGen is a tool for mapping Simplex noise onto an image. You can open it up, mess around with the settings until you find something useful, then you can save it as a png-image file.
+        <ul style="list-style-type:square;">
+            <li>Customizable dimensions - Choose your width and height of the image.</li>
+            <li>Choose between 3 different noise types: Fractal, Billow or Ridged Multi.</li>
+            <li>Customizable settings for your noise - Octaves, Lacunarity, Persistance, Seed and Frequency</li>
+            <li>Customizable colors - Choose your value for the red, green, blue and alpha channels</li>
+        </ul>
+        `,
         picElementType: ["img", "img", "img"],
         pic1Resource: "Media/NoiseGen-purple.png",
         pic2Resource: "Media/NoiseGen-green.png",
@@ -98,19 +106,41 @@ let projects = {
 
     },
     [navigationItems[3].textContent]: {
-        Text: "This is the text for about!",
-        picElementType: ["video", "img", "img"],
-        pic1Resource: "",
+        Text: `<h2>About this site</h2>
+        This site is an responsive(try it out!) single-page application written in pure modern Javascript.
+        I set out from the start to make it responsive since the last website I made(a shader showcase site) was not designed this way in the
+        beginning, turns out its alot harder to retrofit responsiveness into a site after it is made. I used CSS3 Grid system for this instead of resorting to an CSS framework since I want to focus on learning core web technologies.
+        Grid is an amazing addition to CSS. I will probably be utilizing it for most future websites I make(unless its a basic site).
+        <br></br>
+        <h2>About me</h2>
+        Hei
+        <br></br>
+        I am developer currently residing in Bergen where I attend the University of Bergen.
+        My name is in the title and I come originally from Iceland.
+        <br></br>
+        <strong>Interests:</strong>
+        <ul> 
+            <li>Creating stuff</li>
+            <li>Running</li>
+            <li>Football</li>
+            <li>Mountain hikes</li>
+        </ul>
+
+        <strong>Programming experience:</strong> Lua, (HTML5, CSS3, Javascript), Java, Python, GLSL, Regex, Git/version control.
+    
+        `,
+        picElementType: ["img", "img", "img"],
+        pic1Resource: "Media/DSC_2839.JPG",
         pic2Resource: "",
         pic3Resource: "",
-        linkURLS: [],
-        linkImageURLS: []
+        linkURLS: ["https://github.com/Mermersk", "https://www.linkedin.com/in/isak-steingrimsson-865a29167/"],
+        linkImageURLS: ["Media/GitHub_Logo.png", "Media/LI-Logo.png"]
 
     },
 
 
 };
-console.log(Object.keys(projects["Duckentry"]));
+//console.log(Object.keys(projects["Duckentry"]));
 function changePage(newPageName) {
     //Getting info for new page and asinging it to newPage.
     let newPage = projects[newPageName];
