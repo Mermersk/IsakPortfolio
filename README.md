@@ -1,3 +1,3 @@
 # IsakPortfolio
 
-This is the repo for my protfolio site.
+This is the repo for my portfolio site.
