@@ -62,7 +62,7 @@ let projects = {
         So I started from scratch again and rewrote the game following OOP principles and managed to finish it in the end. Play store and github links are below!
         `,
         picElementType: ["video", "img", "img"],
-        pic1Resource: "https://zippy.gfycat.com/UntimelyCooperativeArcticfox.webm",
+        pic1Resource: "Media/UntimelyCooperativeArcticfox.webm",
         pic2Resource: "https://lh3.googleusercontent.com/acny40JIQw4szD4QZQXscCURdD17ykaDGDWnaSlpWjEI6YjPwGUbpJ7gKoNp55Q5cOI=w720-h310-rw",
         pic3Resource: "https://lh3.googleusercontent.com/4840UYRFBObn5Bhmx7ZB1fV6MBHnWWPwKqoPVWnrPKess4X73I9WkbujpOTc3oDX=w720-h310-rw",
         linkURLS: ["https://github.com/Mermersk/Duckentry2.0", "https://play.google.com/store/apps/details?id=com.mermersk.duckentry"],
