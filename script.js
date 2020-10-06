@@ -126,7 +126,7 @@ let projects = {
             <li>Mountain hikes</li>
         </ul>
 
-        <strong>Programming experience:</strong> Lua, (HTML5, CSS3, Javascript), Java, Python, GLSL, Regex, Git/version control.
+        <strong>Programming experience:</strong> Lua, (HTML5, CSS3, Javascript), Java, Python, SQL, GLSL, Regex, Git/version control.
     
         `,
         picElementType: ["img", "img", "img"],
@@ -180,4 +180,3 @@ visiblePage.appendAllElements();
 
 visiblePage.removeAllElements();
 */
-
