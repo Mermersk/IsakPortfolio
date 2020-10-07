@@ -228,15 +228,6 @@ class Project {
         });
 
     }
-
-    fadeInAllElements() {
-
-        //while (this.mainTextElement.style.opacity < 1.0) {
-            //this.mainTextElement.style.opacity += 0.1;
-        //}
-        
-        //this.mainTextElement.style.opacity = 0.0;
-    }
     
 
 }

@@ -15,7 +15,7 @@ so if we have 3 columns and all are set to 1fr it means they will all be the sam
 if we have 3 columns all set to 0.2fr this means that our grid is forced to get smaller, but our grid area is still the same size
 if we have 3 columns all set to 3fr, it will never exceed viewport width or max-width attribute if set.  
 
-In grid items are added automaitaclly in new row if needed.
+In grid items are added automatically in new row if needed.
 */
 
 body {
