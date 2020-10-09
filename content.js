@@ -63,6 +63,28 @@ let projects = {
         linkImageURLS: ["Media/GitHub_Logo.png", "Media/google-play-badge.png"]
 
     },
+    "DetFinder": {
+        Text: `<h2>Determinant Finder</h2>
+        Determinant finder is a website to find the determinant of a matrix. It uses an algorithm called 
+        <a href = "https://en.wikipedia.org/wiki/Laplace_expansion">cofactor expansion</a>. After using it in my 
+        linear algebra class I wanted to see if I could implement it in code. The algorithm is very slow, has a Big O of !n.
+        <br></br>
+        All of the website is actually programmed in Lua! I am using a libray called <a href = "https://fengari.io/">Fengari</a> which
+        is a Lua VM written in Javascript. I set my self another goal of mainly using recursion instead of loops and this went well in the end.
+        I learned alot of how to use recursion effectively but it turns out that debugging complex recursion can be a bit tricky.
+        <a href = "https://mermersk.github.io/DeterminantFinder">Site is available here</a>
+        <br></br>
+        <strong>Technology used:</strong> Lua (Fengari), HTML5, CSS3 
+        
+        `,
+        picElementType: ["img", "img", "img"],
+        pic1Resource: "Media/d10.png",
+        pic2Resource: "Media/d12.png",
+        pic3Resource: "Media/d13.png",
+        linkURLS: ["https://github.com/Mermersk/DeterminantFinder"],
+        linkImageURLS: ["Media/GitHub_Logo.png"]
+    },
+
     "Shaders": {
         Text: `<h2>Shaders</h2>
         In spring/summer of 2019 I decided to learn how to create shaders. I was fascinated by effects one can see in video games and websites that utilize WebGL. 
@@ -81,6 +103,29 @@ let projects = {
         linkImageURLS: ["Media/shaderSiteLogo.png", "Media/GitHub_Logo.png"]
 
     },
+
+    "SoccyPredict": {
+        Text: `<h2>SoccyPredict</h2>
+        
+        SoccyPredict is an football match predictor. 
+        It is a terminal application. It calculates probability of certain events occuring in a football match. It then converts these to 
+        decimal betting odds, retrieves odds from the market(bookmakers) and compares its prediction with what the market thinks is going to
+        happen. In theory if SoccyPredict makes better predictions than the market then it should in the end see a positive ROI.
+        <br></br>
+        It uses an API called "API-FOOTBALL" to retrieve all stats and market odds. The great thing about it is that you can get multiple predictions
+        about upcoming games all around the world. Only thing you have to specify is: [CountryName, LeagueName, numberOfGames] where numberOfGames is an
+        Integer specifying how many matches in the future you want predictions for. I had alot of fun creating this and using it!
+        <br></br>
+        <strong>Technology used:</strong> Python, REST API, Python-Tabulate 
+        
+        `,
+        picElementType: ["img", "img", "img"],
+        pic1Resource: "Media/SoccyTerm.jpg",
+        pic2Resource: "",
+        pic3Resource: "",
+        linkURLS: ["https://github.com/Mermersk/SoccyPredict"],
+        linkImageURLS: ["Media/GitHub_Logo.png"]
+    },
     
     "About": {
         Text: `<h2>About this site</h2>
@@ -92,8 +137,7 @@ let projects = {
         <h2>About me</h2>
         Hei
         <br></br>
-        I am developer currently residing in Bergen where I attend the University of Bergen.
-        My name is in the title and I come originally from Iceland.
+        I am developer currently residing in Iceland. I studied Computer science at the University of Bergen.
         <br></br>
         <strong>Interests:</strong>
         <ul> 
@@ -103,7 +147,7 @@ let projects = {
             <li>Mountain hikes</li>
         </ul>
 
-        <strong>Programming experience:</strong> Lua, (HTML5, CSS3, Javascript), Java, Python, SQL, GLSL, Regex, Git/version control.
+        <strong>Programming experience:</strong> Lua, (HTML5, CSS3, Javascript), Java, Python, Kotlin, R, Haskell, SQL, GLSL, Regex, Git/version control.
     
         `,
         picElementType: ["img", "img", "img"],

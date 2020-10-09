@@ -71,20 +71,4 @@ function changePage(newPageName) {
 
 }
 
-changePage("Plantarinn")
-
-//console.log(projects["Shaders"].Text);
-/*
-visiblePage.insertMainText = "hjsbdhjabsdhjasdb";
-visiblePage.insertPic1 = "https://zippy.gfycat.com/UntimelyCooperativeArcticfox.webm";
-visiblePage.insertPic2 = "https://lh3.googleusercontent.com/acny40JIQw4szD4QZQXscCURdD17ykaDGDWnaSlpWjEI6YjPwGUbpJ7gKoNp55Q5cOI=w720-h310-rw";
-visiblePage.insertPic3 = "https://lh3.googleusercontent.com/4840UYRFBObn5Bhmx7ZB1fV6MBHnWWPwKqoPVWnrPKess4X73I9WkbujpOTc3oDX=w720-h310-rw";
-visiblePage.createMaintextElement();
-visiblePage.createPic1Element("video");
-visiblePage.createPic2Element("img");
-visiblePage.createPic3Element("img");
-
-visiblePage.appendAllElements();
-
-visiblePage.removeAllElements();
-*/
+changePage("Duckentry")
